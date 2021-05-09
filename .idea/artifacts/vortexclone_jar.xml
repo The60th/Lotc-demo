@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="vortexclone:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/vortexclone_jar</output-path>
+    <root id="archive" name="vortexclone.jar">
+      <element id="module-output" name="vortexclone" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/plugin.yml" />
+    </root>
+  </artifact>
+</component>
