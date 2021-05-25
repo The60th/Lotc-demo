@@ -14,12 +14,14 @@ Side note, the git repo is a bit messy with some deleted files. There was a part
 ##### Flameing arrows
 
 This plugin allowed flame arrows to set light to blocks they hit.
+
 [Flaming Arrows](https://www.youtube.com/watch?v=bG9d-LdgL4k)
 
 
 ##### Dogs++
 
 This plugin added all sorts of features for your minecraft dogs. From dog whistles that would summon them to you, bells you could ring to asemble them all, it even supported grouping your dogs by the color of their tag and only interacting with those dogs.
+
 [Dogs++](https://www.youtube.com/watch?v=i7abp-Tbt_4)
 
 
@@ -29,6 +31,9 @@ This plugin we a recreation of the LOTC 1.9 PvP plugin Surge, it has been used o
 
 Rated best clone by Nickrocky213.
 
+
 [Surge-clone](https://www.youtube.com/watch?v=lC5l1hPj0i0)
+
 [More Surge In action](https://www.youtube.com/watch?v=ISmKXqSSBKs)
+
 [Extra dose of surge](https://www.youtube.com/watch?v=Um2hNWrlbAU)
