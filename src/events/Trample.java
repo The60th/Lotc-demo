@@ -17,7 +17,7 @@ public class Trample implements Listener {
     public void onPlayerInteractEvent(PlayerInteractEvent event){
         if(event.getAction() == Action.PHYSICAL){
             System.out.println("Physical Event Fired");
-            if(Main.checkToggle(event.getPlayer().getUniqueId())){
+            if(main.checkToggle(event.getPlayer().getUniqueId())){
                 System.out.println("Toggle contains");
                 event.setCancelled(true);
             }else{

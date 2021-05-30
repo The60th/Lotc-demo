@@ -22,33 +22,28 @@ import java.util.logging.Logger;
 
 public class Main extends JavaPlugin {
     public static Logger logger;
-    private static ArrayList<UUID> trampleToggle = new ArrayList<>();
-
-    public static void addToggle(UUID player) {
+    private ArrayList<UUID> trampleToggle = new ArrayList<>();
+    public void addToggle(UUID player){
         trampleToggle.remove(player);
     }
-
-    public static void removeToggle(UUID player) {
+    public void removeToggle(UUID player){
         trampleToggle.add(player);
     }
-
-    public static boolean checkToggle(UUID player) {
+    public boolean checkToggle(UUID player){
         return trampleToggle.contains(player);
     }
-
     //Toggle the players status within the list.
     //Return false if the player is added, return true if the player is removed.
-    public static boolean toggle(UUID player) {
-        if (trampleToggle.contains(player)) {
+    public boolean toggle(UUID player){
+        if(trampleToggle.contains(player)){
             trampleToggle.remove(player);
             return true;
-        } else {
+        }else{
             trampleToggle.add(player);
             return false;
         }
     }
-
-    public void onEnable() {
+    public void onEnable(){
         Main.logger = Logger.getLogger("Minecraft");
         this.registerCommands();
         this.registerEvents();
@@ -62,17 +57,18 @@ public class Main extends JavaPlugin {
     }
 
 
+
     public void registerEvents() {
         final PluginManager pm = this.getServer().getPluginManager();
         pm.registerEvents(new Harvest(this), this);
-        pm.registerEvents(new Trample(this), this);
+        pm.registerEvents(new Trample(this),this);
         pm.registerEvents(new PistonEvent(this), this);
         pm.registerEvents(new WaterEvent(this), this);
     }
 
 
     public void registerCommands() {
-        this.getCommand("toggle").setExecutor(new ToggleCommand());
+     this.getCommand("toggle").setExecutor(new ToggleCommand(this));
 
     }
 }

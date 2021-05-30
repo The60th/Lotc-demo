@@ -12,6 +12,11 @@ import org.bukkit.inventory.Inventory;
 import static events.InventoryClick.removeTeams;
 
 public class ToggleCommand implements CommandExecutor {
+    private Main main;
+
+    public ToggleCommand(Main main) {
+        this.main = main;
+    }
 
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
         if (commandSender instanceof Player && label.equalsIgnoreCase("toggle")) {
@@ -24,7 +29,7 @@ public class ToggleCommand implements CommandExecutor {
             switch (args[0].toLowerCase()) {
                 case "trample":
                     //If the args is trample toggle the mode using Main.toggle
-                    sender.sendMessage("You have swapped your trample status to: " + Main.toggle(sender.getUniqueId()));
+                    sender.sendMessage("You have swapped your trample status to: " + main.toggle(sender.getUniqueId()));
                     //Trample case
                     return true;
                 case "forcetrample":
@@ -40,7 +45,7 @@ public class ToggleCommand implements CommandExecutor {
                             Player target = Bukkit.getPlayer(name);
                             if (target != null) {
                                 //Check that we can resolve the target player.
-                                boolean bool = Main.toggle(target.getUniqueId());
+                                boolean bool = main.toggle(target.getUniqueId());
                                 sender.sendMessage("You have set " + name + " trample status to: " + bool);
                                 target.sendMessage("A moderator has set your trample status to: " + bool);
                                 return true;
