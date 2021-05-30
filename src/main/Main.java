@@ -21,7 +21,7 @@ import java.util.UUID;
 import java.util.logging.Logger;
 
 public class Main extends JavaPlugin {
-    public static Logger logger;
+    private Logger logger = this.getLogger();
     private ArrayList<UUID> trampleToggle = new ArrayList<>();
     public void addToggle(UUID player){
         trampleToggle.remove(player);
@@ -44,9 +44,11 @@ public class Main extends JavaPlugin {
         }
     }
     public void onEnable(){
-        Main.logger = Logger.getLogger("Minecraft");
+        
         this.registerCommands();
         this.registerEvents();
+        final PluginDescriptionFile pdfFile = this.getDescription();
+        logger.info(pdfFile.getName() + "has successfully enabled.");
     }
 
 
