@@ -8,13 +8,16 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 public class Trample implements Listener {
-
+    private Main main;
+    public Trample(Main main){
+        this.main = main;
+    }
     //Check for the trample event fired from players, catch if it is and check the players toggle status
     @EventHandler
     public void onPlayerInteractEvent(PlayerInteractEvent event){
         if(event.getAction() == Action.PHYSICAL){
             System.out.println("Physical Event Fired");
-            if(Main.checkToggle(event.getPlayer())){
+            if(Main.checkToggle(event.getPlayer().getUniqueId())){
                 System.out.println("Toggle contains");
                 event.setCancelled(true);
             }else{

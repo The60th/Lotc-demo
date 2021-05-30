@@ -1,5 +1,6 @@
 package events;
 
+import main.Main;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.Ageable;
@@ -8,7 +9,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPistonExtendEvent;
 
 public class PistonEvent implements Listener {
-
+    private Main main;
+    public PistonEvent(Main main){
+        this.main = main;
+    }
     /**
      *
      * Check if the instance of any blocks effect by the piston moving are of ageAble type, if so we know they
