@@ -44,7 +44,7 @@ public class Main extends JavaPlugin {
         }
     }
     public void onEnable(){
-        
+
         this.registerCommands();
         this.registerEvents();
         final PluginDescriptionFile pdfFile = this.getDescription();
@@ -54,7 +54,6 @@ public class Main extends JavaPlugin {
 
     public void onDisable() {
         final PluginDescriptionFile pdfFile = this.getDescription();
-        final Logger logger = Logger.getLogger("Minecraft");
         logger.info(pdfFile.getName() + "has successfully disabled.");
     }
 
